@@ -44,10 +44,8 @@ struct ContentView: View {
         filter.setValue(string.data(using: .utf8), forKey: "inputMessage")
 //        filter.message = Data(string.utf8)
 
-        // Get the output image from filter
+        // Get the output image from filter and convert them to uiImage
         if let outputImage = filter.outputImage {
-
-            //  create cgimage and concert them to ui image
             if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
                 return UIImage(cgImage: cgimg)
             }
